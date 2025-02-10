@@ -1330,8 +1330,8 @@ class TTLock {
     }
     switch (command) {
       case COMMAND_GET_BLUETOOTH_STATE:
-        int stateValue = data[TTResponse.state];
-        TTBluetoothState state = TTBluetoothState.values[stateValue];
+        int? stateValue = data[TTResponse.state];
+        TTBluetoothState state = TTBluetoothState.values[stateValue??0];
         TTBluetoothStateCallback stateCallback = callBack;
         stateCallback(state);
         break;
