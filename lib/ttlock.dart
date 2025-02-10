@@ -1330,7 +1330,6 @@ class TTLock {
     }
     switch (command) {
       case COMMAND_GET_BLUETOOTH_STATE:
-        print('################${data[TTResponse.state]}');
         int stateValue = data[TTResponse.state];
         TTBluetoothState state = TTBluetoothState.values[stateValue];
         TTBluetoothStateCallback stateCallback = callBack;
@@ -1680,10 +1679,10 @@ class TTLock {
           : map[TTResponse.errorMessage];
       _errorCallback(command, errorCode, errorMessage);
     } else if (resultState == TTLockReuslt.progress.index) {
-      //中间状态的回调（添加 IC卡、指纹）
+      //中间状态的回调（添加 IC卡、指纹） Зворотний виклик проміжного стану (додавання IC-карти, відбитка пальця)
       _progressCallback(command, data);
     } else {
-      //成功的回调
+      //成功的回调. успішний зворотний дзвінок
       _successCallback(command, data);
     }
   }
