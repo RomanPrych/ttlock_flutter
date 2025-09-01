@@ -1419,10 +1419,10 @@ class TTLock {
       case COMMAND_CONTROL_LOCK:
         TTControlLockCallback controlLockCallback = callBack;
         controlLockCallback(
-            data[TTResponse.lockTime],
-            data[TTResponse.electricQuantity],
-            data[TTResponse.uniqueId],
-            data[TTResponse.lockData]);
+            data[TTResponse.lockTime]?? 0,
+            data[TTResponse.electricQuantity]?? 0,
+            data[TTResponse.uniqueId]?? 0,
+            data[TTResponse.lockData] ?? {});
         break;
 
       case COMMAND_ACTIVE_LIFT_FLOORS:
