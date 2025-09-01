@@ -2097,7 +2097,7 @@ typedef TTBluetoothStateCallback = void Function(TTBluetoothState state);
 typedef TTBluetoothScanStateCallback = void Function(bool isScanning);
 typedef TTLockDataCallback = void Function(String lockData);
 typedef TTControlLockCallback = void Function(
-    int lockTime, int electricQuantity, int? uniqueId, String? lockData);
+    int lockTime, int electricQuantity, int uniqueId, String lockData);
 typedef TTGetAdminPasscodeCallback = void Function(String adminPasscode);
 typedef TTGetLockElectricQuantityCallback = void Function(int electricQuantity);
 typedef TTGetLockOperateRecordCallback = void Function(String records);
